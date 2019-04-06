@@ -8,8 +8,8 @@ module.exports = function equal(a, b) {
   if (a === b) return true;
 
   if (a && b && typeof a == 'object' && typeof b == 'object') {
-    var arrA = isArray(a)
-      , arrB = isArray(b)
+    var arrA = isArray(a) || a.BYTES_PER_ELEMENT
+      , arrB = isArray(b) || b.BYTES_PER_ELEMENT
       , i
       , length
       , key;
